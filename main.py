@@ -5,7 +5,7 @@ from telegram import Update, ReplyKeyboardMarkup, InlineKeyboardButton, InlineKe
 from telegram.ext import Application, CommandHandler, MessageHandler, CallbackQueryHandler, filters, ContextTypes
 
 # --- কনফিগারেশন ---
-BOT_TOKEN = "8882709787:AAEOvT7BcwPCFQ1t-0RelzA-W2A_loEgJmg"
+BOT_TOKEN = "8996139501:AAFrJeSdWSValWkyMbjiKuelpa5_ONGEmNY"
 API_KEY = "e932533c0823ba8d18a4c18903fe1c66"
 BASE_URL = "https://api.grizzlysms.com/stubs/handler_api.php"
 
@@ -37,7 +37,8 @@ FIXED_COUNTRIES = [
     {"id": "82", "flag": "🇧🇪", "name": "Belgium"},
     {"id": "122", "flag": "🇲🇩", "name": "Moldova"},
     {"id": "60", "flag": "🇧🇩", "name": "Bangladesh"},
-    {"id": "92", "flag": "🇧🇴", "name": "Bolivia"}
+    {"id": "92", "flag": "🇧🇴", "name": "Bolivia"},
+    {"id": "35", "flag": "🇦🇿", "name": "Azerbaijan"}
 ]
 
 COUNTRY_DICT = {c["id"]: f"{c['flag']} {c['name']}" for c in FIXED_COUNTRIES}

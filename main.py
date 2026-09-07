@@ -13,32 +13,112 @@ MY_TELEGRAM_ID = 6553306143
 SERVICE_CODE = "tg"
 USDT_BEP20_ADDRESS = "naiiiiii"
 
+# কনকারেন্সি সেটিংস (হাই স্পিড ক্যাচার)
+CONCURRENT_WORKERS = 10  # ১০টি প্যারালাল ওয়ার্কার একসাথে কাজ করবে
+WORKER_DELAY = 0.25      # প্রতি ওয়ার্কার ০.২৫ সেকেণ্ডে ১টি রিকোয়েস্ট দেবে (১০ x ৪ = ৪০ রিকোয়েস্ট/সেকেন্ড)
+
 FIXED_COUNTRIES = [
+    {"id": "0", "flag": "🇷🇺", "name": "Russia"},
     {"id": "1", "flag": "🇺🇦", "name": "Ukraine"},
-    {"id": "11", "flag": "🇸🇻", "name": "El Salvador"},
-    {"id": "27", "flag": "🇯🇲", "name": "Jamaica"},
-    {"id": "12", "flag": "🇰🇷", "name": "South Korea"},
-    {"id": "187", "flag": "🇺🇸", "name": "USA"},
-    {"id": "10", "flag": "🇭🇰", "name": "Hong Kong"},
-    {"id": "31", "flag": "🇧🇭", "name": "Bahrain"},
-    {"id": "17", "flag": "🇻🇳", "name": "Vietnam"},
-    {"id": "67", "flag": "🇬🇭", "name": "Ghana"},
-    {"id": "184", "flag": "🇲🇪", "name": "Montenegro"},
-    {"id": "19", "flag": "🇳🇴", "name": "Norway"},
     {"id": "2", "flag": "🇰🇿", "name": "Kazakhstan"},
-    {"id": "6", "flag": "🇮🇩", "name": "Indonesia"},
-    {"id": "39", "flag": "🇦🇷", "name": "Argentina"},
-    {"id": "15", "flag": "🇵🇱", "name": "Poland"},
+    {"id": "3", "flag": "🇨🇳", "name": "China"},
     {"id": "4", "flag": "🇮🇶", "name": "Iraq"},
     {"id": "5", "flag": "🇵🇰", "name": "Pakistan"},
-    {"id": "22", "flag": "🇮🇳", "name": "India"},
+    {"id": "6", "flag": "🇮🇩", "name": "Indonesia"},
+    {"id": "7", "flag": "🇲🇾", "name": "Malaysia"},
+    {"id": "8", "flag": "🇰🇪", "name": "Kenya"},
+    {"id": "9", "flag": "🇮🇱", "name": "Israel"},
+    {"id": "10", "flag": "🇭🇰", "name": "Hong Kong"},
+    {"id": "11", "flag": "🇸🇻", "name": "El Salvador"},
+    {"id": "12", "flag": "🇰🇷", "name": "South Korea"},
+    {"id": "13", "flag": "🇲🇴", "name": "Macao"},
+    {"id": "14", "flag": "🇲🇾", "name": "Sabah"},
+    {"id": "15", "flag": "🇵🇱", "name": "Poland"},
     {"id": "16", "flag": "🇬🇧", "name": "United Kingdom"},
+    {"id": "17", "flag": "🇻🇳", "name": "Vietnam"},
+    {"id": "18", "flag": "🇰🇬", "name": "Kyrgyzstan"},
+    {"id": "19", "flag": "🇳🇴", "name": "Norway"},
+    {"id": "20", "flag": "🇳🇵", "name": "Nepal"},
+    {"id": "21", "flag": "🇳🇬", "name": "Nigeria"},
+    {"id": "22", "flag": "🇮🇳", "name": "India"},
+    {"id": "23", "flag": "🇿🇦", "name": "South Africa"},
+    {"id": "24", "flag": "🇪🇸", "name": "Spain"},
+    {"id": "25", "flag": "🇲🇽", "name": "Mexico"},
+    {"id": "26", "flag": "🇲🇴", "name": "Malawi"},
+    {"id": "27", "flag": "🇯🇲", "name": "Jamaica"},
     {"id": "28", "flag": "🇧🇷", "name": "Brazil"},
-    {"id": "82", "flag": "🇧🇪", "name": "Belgium"},
-    {"id": "122", "flag": "🇲🇩", "name": "Moldova"},
+    {"id": "29", "flag": "🇳🇱", "name": "Netherlands"},
+    {"id": "30", "flag": "🇱🇹", "name": "Lithuania"},
+    {"id": "31", "flag": "🇧🇭", "name": "Bahrain"},
+    {"id": "32", "flag": "🇳🇿", "name": "New Zealand"},
+    {"id": "33", "flag": "🇨🇴", "name": "Colombia"},
+    {"id": "34", "flag": "🇹🇷", "name": "Turkey"},
+    {"id": "35", "flag": "🇦🇿", "name": "Azerbaijan"},
+    {"id": "36", "flag": "🇪🇬", "name": "Egypt"},
+    {"id": "37", "flag": "🇪🇺", "name": "Europe"},
+    {"id": "38", "flag": "🇺🇿", "name": "Uzbekistan"},
+    {"id": "39", "flag": "🇦🇷", "name": "Argentina"},
+    {"id": "40", "flag": "🇲🇲", "name": "Myanmar"},
+    {"id": "41", "flag": "🇪🇭", "name": "Western Sahara"},
+    {"id": "42", "flag": "🇲🇦", "name": "Morocco"},
+    {"id": "43", "flag": "🇬🇭", "name": "Ghana"},
+    {"id": "44", "flag": "🇩🇿", "name": "Algeria"},
+    {"id": "45", "flag": "🇸🇳", "name": "Senegal"},
+    {"id": "46", "flag": "🇧🇯", "name": "Benin"},
+    {"id": "47", "flag": "🇨🇮", "name": "Cote d'Ivoire"},
+    {"id": "48", "flag": "🇹🇳", "name": "Tunisia"},
+    {"id": "49", "flag": "🇸🇩", "name": "Sudan"},
+    {"id": "50", "flag": "🇨🇲", "name": "Cameroon"},
+    {"id": "51", "flag": "🇨🇬", "name": "Congo"},
+    {"id": "52", "flag": "🇺🇬", "name": "Uganda"},
+    {"id": "53", "flag": "🇦🇴", "name": "Angola"},
+    {"id": "54", "flag": "🇿🇲", "name": "Zambia"},
+    {"id": "55", "flag": "🇿🇼", "name": "Zimbabwe"},
+    {"id": "56", "flag": "🇲🇼", "name": "Malawi"},
+    {"id": "57", "flag": "🇲🇿", "name": "Mozambique"},
+    {"id": "58", "flag": "🇲🇬", "name": "Madagascar"},
+    {"id": "59", "flag": "🇹🇿", "name": "Tanzania"},
     {"id": "60", "flag": "🇧🇩", "name": "Bangladesh"},
+    {"id": "61", "flag": "🇹🇭", "name": "Thailand"},
+    {"id": "62", "flag": "🇸🇬", "name": "Singapore"},
+    {"id": "63", "flag": "🇵🇭", "name": "Philippines"},
+    {"id": "64", "flag": "🇫🇯", "name": "Fiji"},
+    {"id": "65", "flag": "🇦🇺", "name": "Australia"},
+    {"id": "66", "flag": "🇧🇺", "name": "Burundi"},
+    {"id": "67", "flag": "🇬🇭", "name": "Ghana"},
+    {"id": "68", "flag": "🇱🇷", "name": "Liberia"},
+    {"id": "69", "flag": "🇸🇱", "name": "Sierra Leone"},
+    {"id": "70", "flag": "🇬🇳", "name": "Guinea"},
+    {"id": "71", "flag": "🇪🇷", "name": "Eritrea"},
+    {"id": "72", "flag": "🇸🇴", "name": "Somalia"},
+    {"id": "73", "flag": "🇯🇵", "name": "Japan"},
+    {"id": "74", "flag": "🇰🇭", "name": "Cambodia"},
+    {"id": "75", "flag": "🇱🇦", "name": "Laos"},
+    {"id": "76", "flag": "🇹🇼", "name": "Taiwan"},
+    {"id": "77", "flag": "🇲🇴", "name": "Macao"},
+    {"id": "78", "flag": "🇲🇳", "name": "Mongolia"},
+    {"id": "79", "flag": "🇦🇫", "name": "Afghanistan"},
+    {"id": "80", "flag": "🇱🇰", "name": "Sri Lanka"},
+    {"id": "81", "flag": "🇮🇷", "name": "Iran"},
+    {"id": "82", "flag": "🇧🇪", "name": "Belgium"},
+    {"id": "83", "flag": "🇩🇪", "name": "Germany"},
+    {"id": "84", "flag": "🇬🇷", "name": "Greece"},
+    {"id": "85", "flag": "🇮🇪", "name": "Ireland"},
+    {"id": "86", "flag": "🇮🇸", "name": "Iceland"},
+    {"id": "87", "flag": "🇫🇷", "name": "France"},
+    {"id": "88", "flag": "🇫🇮", "name": "Finland"},
+    {"id": "89", "flag": "🇭🇺", "name": "Hungary"},
+    {"id": "90", "flag": "🇱🇺", "name": "Luxembourg"},
+    {"id": "91", "flag": "🇲🇹", "name": "Malta"},
     {"id": "92", "flag": "🇧🇴", "name": "Bolivia"},
-    {"id": "35", "flag": "🇦🇿", "name": "Azerbaijan"}
+    {"id": "93", "flag": "🇨🇱", "name": "Chile"},
+    {"id": "94", "flag": "🇪🇨", "name": "Ecuador"},
+    {"id": "95", "flag": "🇵🇾", "name": "Paraguay"},
+    {"id": "96", "flag": "🇵🇪", "name": "Peru"},
+    {"id": "97", "flag": "🇺🇾", "name": "Uruguay"},
+    {"id": "98", "flag": "🇻🇪", "name": "Venezuela"},
+    {"id": "99", "flag": "🇨🇦", "name": "Canada"},
+    {"id": "187", "flag": "🇺🇸", "name": "USA"}
 ]
 
 COUNTRY_DICT = {c["id"]: f"{c['flag']} {c['name']}" for c in FIXED_COUNTRIES}
@@ -186,6 +266,53 @@ async def start_number_interface(chat_id, order_id, phone_number, context: Conte
                 pass
             await asyncio.sleep(4)
 
+# --- হাই-স্পিড ওয়ার্কার লুপ ---
+async def worker_task(session, url, chat_id, status_msg, stop_markup, context):
+    global target_running, request_count
+    while target_running:
+        request_count += 1
+        try:
+            async with session.get(url, timeout=3) as response:
+                if response.status == 200:
+                    res_text = await response.text()
+                    if "ACCESS_NUMBER" in res_text:
+                        parts = res_text.split(":")
+                        order_id = parts[1]
+                        phone_number = parts[2]
+                        formatted_num = f"+{phone_number.lstrip('+')}"
+                        try:
+                            await context.bot.edit_message_text(
+                                chat_id=chat_id, message_id=status_msg.message_id,
+                                text=f"✅ **Captured!**\n🌍 Country: {target_country_name}\n🚀 Number: `{formatted_num}`\n\n🔄 Searching next...",
+                                reply_markup=stop_markup,
+                                parse_mode="Markdown"
+                            )
+                        except Exception:
+                            pass
+                        asyncio.create_task(start_number_interface(chat_id, order_id, phone_number, context))
+                    elif "NO_BALANCE" in res_text:
+                        target_running = False
+                        await context.bot.send_message(chat_id=chat_id, text="⚠️ **Stopped: No Balance.**", parse_mode="Markdown")
+                        break
+        except Exception:
+            pass
+        await asyncio.sleep(WORKER_DELAY)
+
+# --- মেসেজ আপডেট লুপ (বট যাতে স্লো বা ব্লক না হয়) ---
+async def status_updater(chat_id, status_msg, stop_markup, context):
+    global target_running, request_count
+    while target_running:
+        try:
+            await context.bot.edit_message_text(
+                chat_id=chat_id, message_id=status_msg.message_id,
+                text=f"⚡ **High-Speed Catcher Running**\n🌍 Country: {target_country_name}\n💵 Target Price: {current_max_price}$\n🚀 Requests Sent: {request_count}",
+                reply_markup=stop_markup,
+                parse_mode="Markdown"
+            )
+        except Exception:
+            pass
+        await asyncio.sleep(2)
+
 async def catcher_loop(chat_id, context: ContextTypes.DEFAULT_TYPE):
     global target_running, request_count, target_country_id, target_country_name, current_max_price
 
@@ -194,48 +321,19 @@ async def catcher_loop(chat_id, context: ContextTypes.DEFAULT_TYPE):
 
     status_msg = await context.bot.send_message(
         chat_id=chat_id,
-        text=f"🎯 **Grizzly Catcher Running**\n🌍 Country: {target_country_name}\n💵 Target Price: {current_max_price}$\n🔄 Requests: {request_count}",
+        text=f"⚡ **High-Speed Catcher Starting...**\n🌍 Country: {target_country_name}\n💵 Target Price: {current_max_price}$",
         reply_markup=stop_markup,
         parse_mode="Markdown"
     )
 
-    async with aiohttp.ClientSession() as session:
-        while target_running:
-            request_count += 1
-            try:
-                async with session.get(url, timeout=4) as response:
-                    if response.status == 200:
-                        res_text = await response.text()
-                        if "ACCESS_NUMBER" in res_text:
-                            parts = res_text.split(":")
-                            order_id = parts[1]
-                            phone_number = parts[2]
-                            formatted_num = f"+{phone_number.lstrip('+')}"
-                            await context.bot.edit_message_text(
-                                chat_id=chat_id, message_id=status_msg.message_id,
-                                text=f"✅ **Captured!**\n🌍 Country: {target_country_name}\n🚀 Number: `{formatted_num}`\n\n🔄 Searching next...",
-                                reply_markup=stop_markup,
-                                parse_mode="Markdown"
-                            )
-                            asyncio.create_task(start_number_interface(chat_id, order_id, phone_number, context))
-                        elif "NO_BALANCE" in res_text:
-                            target_running = False
-                            await context.bot.send_message(chat_id=chat_id, text="⚠️ **Stopped: No Balance.**", parse_mode="Markdown")
-                            break
-                        else:
-                            if request_count % 3 == 0:
-                                try:
-                                    await context.bot.edit_message_text(
-                                        chat_id=chat_id, message_id=status_msg.message_id,
-                                        text=f"🎯 **Grizzly Catcher Running**\n🌍 Country: {target_country_name}\n💵 Target Price: {current_max_price}$\n🔄 Requests: {request_count}",
-                                        reply_markup=stop_markup,
-                                        parse_mode="Markdown"
-                                    )
-                                except Exception:
-                                    pass
-            except Exception:
-                pass
-            await asyncio.sleep(0.35)
+    # কানেকশন পুল সেশন তৈরি
+    connector = aiohttp.TCPConnector(limit=100)
+    async with aiohttp.ClientSession(connector=connector) as session:
+        # ১০টি প্যারালাল ওয়ার্কার ও ১টি ইন্টারফেস আপডেট টাস্ক একসাথে রান হবে
+        workers = [worker_task(session, url, chat_id, status_msg, stop_markup, context) for _ in range(CONCURRENT_WORKERS)]
+        workers.append(status_updater(chat_id, status_msg, stop_markup, context))
+        
+        await asyncio.gather(*workers)
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await is_authorized(update):
@@ -452,7 +550,7 @@ def main():
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_messages))
     app.add_handler(CallbackQueryHandler(inline_buttons))
 
-    print("🤖 Grizzly Custom Layout Bot Started...")
+    print("🤖 Grizzly High-Speed Catcher Started...")
     app.run_polling(drop_pending_updates=True)
 
 if __name__ == '__main__':
